@@ -1,0 +1,16 @@
+{
+    "dados":[
+        {
+            "cpf":"123",
+            "saldo": 400,
+            "banco":"nu"
+
+        },
+        {
+            "cpf":"456",
+            "saldo":"321",
+            "banco":"inter"
+
+        }
+    ]
+}

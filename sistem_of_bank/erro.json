@@ -1,0 +1,33 @@
+{
+    "compo_cpf":
+    {
+        "status": "error",
+        "errors": [
+            {
+                "field": "cpf",
+                "message": "cpf é obrigatório.",
+                "exemplo":[
+                    {
+                        "cpf":"123",
+                        "banco":"banco.exemplo"
+                    }
+                ]
+                }]
+    },
+    "compo_bank":
+    {
+        "status": "error",
+        "errors": [
+            {
+                "field": "banco",
+                "message": "banco é obrigatório.",
+                "exemplo":[
+                    {
+                        "cpf":"123",
+                        "banco":"banco.exemplo"
+                    }
+                ]
+                }]
+    }
+    
+}
