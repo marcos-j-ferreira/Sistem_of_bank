@@ -1,16 +1,14 @@
 {
-    "dados":[
-        {
-            "cpf":"123",
-            "saldo": 200000,
-            "banco":"nu"
-
-        },
-        {
-            "cpf":"456",
-            "saldo":321,
-            "banco":"inter"
-
-        }
-    ]
+  "dados": [
+    {
+      "cpf": "123",
+      "saldo": 95900,
+      "banco": "nu"
+    },
+    {
+      "cpf": "456",
+      "saldo": 321,
+      "banco": "inter"
+    }
+  ]
 }
