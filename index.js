@@ -7,7 +7,7 @@ const porta = 8000
 
 app.use(bodyParser.json())
 
-app.use('/test', router)
+app.use('/banco', router)
 
 app.listen(porta, () => {
     console.log(`API rodando na porta ${porta}`)
