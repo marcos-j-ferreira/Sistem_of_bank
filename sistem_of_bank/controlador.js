@@ -4,6 +4,8 @@ import erro from './erro.json' assert {type:"json"}
 
 const getSaldo = async (req, res) => {
 
+    const banco = db.dados
+
     const data = req.body
 
     if(!data.cpf){
@@ -12,6 +14,15 @@ const getSaldo = async (req, res) => {
     if(!data.banco){
         res.status(400).send(erro.compo_bank)
     }
+    //const result = trees.find(tree => tree.name === "oak");
+
+    const cpf = data.cpf
+
+    const saldo = banco.find(banco => banco.cpf === cpf)
+
+    console.log(saldo)
+
+    res.status(201).json({"Saldo Atual":saldo.saldo})
 }
 
 
