@@ -28,6 +28,36 @@
                     }
                 ]
                 }]
+    },
+    "compo_saque":
+    {
+        "status": "error",
+        "errors": [
+            {
+                "field": "saque",
+                "message": "informe o valor a ser sacado",
+                "exemplo":[
+                    {
+                        "cpf":"123",
+                        "valor":123
+                    }
+                ]
+                }]
+    },
+    "compo__cpf":
+    {
+        "status": "error",
+        "errors": [
+            {
+                "field": "cpf",
+                "message": "cpf é obrigatório.",
+                "exemplo":[
+                    {
+                        "cpf":"123",
+                        "valor":123
+                    }
+                ]
+                }]
     }
     
 }
