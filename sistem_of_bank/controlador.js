@@ -1,6 +1,5 @@
-import db from '../banco_de_dados/dados.json' assert {type:"json"} 
 import fs from 'fs'
-import path from 'path'
+import db from '../banco_de_dados/dados.json' assert {type:"json"} 
 import erro from './erro.json' assert {type:"json"}
 import apro from './response.json' assert {type:"json"}
 
@@ -22,9 +21,10 @@ const getSaldo = async (req, res) => {
 
     const saldo = banco.find(banco => banco.cpf === cpf)
 
-    console.log(saldo)
+    //console.log(saldo)
 
-    res.status(201).json({"Saldo Atual":saldo.saldo})
+    const status_conta = apro.saldo
+    res.status(201).json({"Saldo Atual":saldo.saldo, status_conta})
 }
 
 
@@ -43,11 +43,16 @@ const Saque = async (req, res) => {
     const dadoss = db.dados;
     const index = dadoss.findIndex((dadoss) => dadoss.cpf === cpf);
   
+    
     if (index === -1) {
-      return res.status(404).json({ error: 'not found' });
+      return res.status(404).json({ error: 'not found'});
     }
-  
     const saldoAtual = dadoss[index].saldo;
+    
+    if(saldoAtual < bodydados.valor){
+        res.status(404).send({error:"Saldo insuficiente","Saldo atual":saldoAtual })
+        return
+    }
     const novoSaldo = saldoAtual - bodydados.valor;
   
     dadoss[index].saldo = novoSaldo;
@@ -56,11 +61,12 @@ const Saque = async (req, res) => {
       if (err) {
         return res.status(500).json({ error: 'Erro no servidor' });
       } else {
-        console.log('ok');
+        //console.log('ok');
       }
     });
-  
-    res.status(200).send(apro);
+
+    const aprovado = apro.saque_aprovado
+    res.status(200).send(aprovado);
   };
 
 export default {getSaldo, Saque}
