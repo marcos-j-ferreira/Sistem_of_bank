@@ -31,7 +31,6 @@ const getSaldo = async (req, res) => {
 const Saque = async (req, res) => {
     const bodydados = req.body;
     const cpf = bodydados.cpf;
-  
     if (!bodydados.cpf) {
       return res.status(400).send(erro.compo__cpf);
     }
@@ -64,9 +63,17 @@ const Saque = async (req, res) => {
         //console.log('ok');
       }
     });
-
+    
     const aprovado = apro.saque_aprovado
     res.status(200).send(aprovado);
-  };
+};
 
+const deposito = async (req, res) => {
+    const body = req.body
+
+}
+
+const trans = async (req,res) => {
+    const body = req.body
+}  
 export default {getSaldo, Saque}
