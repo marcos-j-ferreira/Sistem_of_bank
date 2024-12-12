@@ -14,6 +14,12 @@ var log = () => {
     console.info(`---------------\nAPI rodando como esperado\n -------------`)
 }
 
+var info = () => {
+    console.info(`Validar informações importantes`)
+}
+ 
+log();
+info();
 
 app.listen(porta, () => {
     console.log(`API rodando na porta ${porta}`)
