@@ -9,6 +9,12 @@ app.use(bodyParser.json())
 
 app.use('/banco', router)
 
+
+var log = () => {
+    console.info(`---------------\nAPI rodando como esperado\n -------------`)
+}
+
+
 app.listen(porta, () => {
     console.log(`API rodando na porta ${porta}`)
 })
