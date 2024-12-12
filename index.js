@@ -15,6 +15,8 @@ var log = () => {
 }
 
 
+log();
+
 app.listen(porta, () => {
     console.log(`API rodando na porta ${porta}`)
 })
